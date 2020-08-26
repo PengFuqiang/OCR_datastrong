@@ -1,0 +1,5 @@
+Fakers
+Pillow
+numpy~=1.19.1
+opencv-python
+matplotlib
