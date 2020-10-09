@@ -68,100 +68,100 @@ def split_to_box(img, time_str):
     dst_img = img[356: 389, 1127: 1693]
     cv.imwrite(dir_name + '\\mima4.jpg', dst_img)
 
-    dst_img = img[461: 491, 185: 530]
+    dst_img = img[461: 488, 185: 575]
     cv.imwrite(dir_name + '\\huowu1.jpg', dst_img)
 
-    dst_img = img[491: 521, 185: 530]
+    dst_img = img[496: 523, 185: 575]
     cv.imwrite(dir_name + '\\huowu2.jpg', dst_img)
 
-    dst_img = img[521: 551, 185: 530]
+    dst_img = img[531: 558, 185: 575]
     cv.imwrite(dir_name + '\\huowu3.jpg', dst_img)
 
-    dst_img = img[551: 581, 185: 530]
+    dst_img = img[566: 593, 185: 575]
     cv.imwrite(dir_name + '\\huowu4.jpg', dst_img)
 
-    dst_img = img[461: 491, 596: 666]
+    dst_img = img[461: 488, 586: 790]
     cv.imwrite(dir_name + '\\guige1.jpg', dst_img)
 
-    dst_img = img[491: 521, 596: 666]
+    dst_img = img[496: 523, 586: 790]
     cv.imwrite(dir_name + '\\guige2.jpg', dst_img)
 
-    dst_img = img[521: 551, 596: 666]
+    dst_img = img[531: 558, 586: 790]
     cv.imwrite(dir_name + '\\guige3.jpg', dst_img)
 
-    dst_img = img[551: 581, 596: 666]
+    dst_img = img[566: 593, 586: 790]
     cv.imwrite(dir_name + '\\guige4.jpg', dst_img)
 
-    dst_img = img[461: 491, 804: 830]
+    dst_img = img[461: 488, 804: 830]
     cv.imwrite(dir_name + '\\danwei1.jpg', dst_img)
 
-    dst_img = img[491: 521, 804: 830]
+    dst_img = img[496: 523, 804: 852]
     cv.imwrite(dir_name + '\\danwei2.jpg', dst_img)
 
-    dst_img = img[521: 551, 804: 830]
+    dst_img = img[531: 558, 804: 852]
     cv.imwrite(dir_name + '\\danwei3.jpg', dst_img)
 
-    dst_img = img[551: 581, 804: 830]
+    dst_img = img[566: 593, 804: 852]
     cv.imwrite(dir_name + '\\danwei4.jpg', dst_img)
 
-    dst_img = img[461: 491, 950: 1013]
+    dst_img = img[461: 488, 950: 1013]
     cv.imwrite(dir_name + '\\shuliang1.jpg', dst_img)
 
-    dst_img = img[491: 521, 950: 1013]
+    dst_img = img[496: 523, 950: 1013]
     cv.imwrite(dir_name + '\\shuliang2.jpg', dst_img)
 
-    dst_img = img[521: 551, 950: 1013]
+    dst_img = img[531: 558, 950: 1013]
     cv.imwrite(dir_name + '\\shuliang3.jpg', dst_img)
 
-    dst_img = img[551: 581, 950: 1013]
+    dst_img = img[566: 593, 950: 1013]
     cv.imwrite(dir_name + '\\shuliang4.jpg', dst_img)
 
-    dst_img = img[461: 491, 1091: 1172]
+    dst_img = img[461: 488, 1091: 1172]
     cv.imwrite(dir_name + '\\danjia1.jpg', dst_img)
 
-    dst_img = img[491: 521, 1091: 1172]
+    dst_img = img[496: 523, 1091: 1172]
     cv.imwrite(dir_name + '\\danjia2.jpg', dst_img)
 
-    dst_img = img[521: 551, 1091: 1172]
+    dst_img = img[531: 558, 1091: 1172]
     cv.imwrite(dir_name + '\\danjia3.jpg', dst_img)
 
-    dst_img = img[551: 581, 1091: 1172]
+    dst_img = img[566: 593, 1091: 1172]
     cv.imwrite(dir_name + '\\danjia4.jpg', dst_img)
 
-    dst_img = img[461: 491, 1292: 1412]
+    dst_img = img[461: 488, 1292: 1435]
     cv.imwrite(dir_name + '\\jin_e1.jpg', dst_img)
 
-    dst_img = img[491: 521, 1292: 1412]
+    dst_img = img[496: 523, 1292: 1435]
     cv.imwrite(dir_name + '\\jin_e2.jpg', dst_img)
 
-    dst_img = img[521: 551, 1292: 1412]
+    dst_img = img[531: 558, 1292: 1435]
     cv.imwrite(dir_name + '\\jin_e3.jpg', dst_img)
 
-    dst_img = img[551: 581, 1292: 1412]
+    dst_img = img[566: 593, 1292: 1435]
     cv.imwrite(dir_name + '\\jin_e4.jpg', dst_img)
 
-    dst_img = img[461: 491, 1455: 1496]
+    dst_img = img[461: 488, 1480: 1521]
     cv.imwrite(dir_name + '\\shuilv1.jpg', dst_img)
 
-    dst_img = img[491: 521, 1455: 1496]
+    dst_img = img[496: 523, 1480: 1521]
     cv.imwrite(dir_name + '\\shuilv2.jpg', dst_img)
 
-    dst_img = img[521: 551, 1455: 1496]
+    dst_img = img[531: 558, 1480: 1521]
     cv.imwrite(dir_name + '\\shuilv3.jpg', dst_img)
 
-    dst_img = img[551: 581, 1455: 1496]
+    dst_img = img[566: 593, 1480: 1521]
     cv.imwrite(dir_name + '\\shuilv4.jpg', dst_img)
 
-    dst_img = img[461: 491, 1624: 1730]
+    dst_img = img[461: 488, 1624: 1730]
     cv.imwrite(dir_name + '\\shuie1.jpg', dst_img)
 
-    dst_img = img[491: 521, 1624: 1730]
+    dst_img = img[496: 523, 1624: 1730]
     cv.imwrite(dir_name + '\\shuie2.jpg', dst_img)
 
-    dst_img = img[521: 551, 1624: 1730]
+    dst_img = img[531: 558, 1624: 1730]
     cv.imwrite(dir_name + '\\shuie3.jpg', dst_img)
 
-    dst_img = img[551: 581, 1624: 1730]
+    dst_img = img[566: 593, 1624: 1730]
     cv.imwrite(dir_name + '\\shuie4.jpg', dst_img)
 
     dst_img = img[715: 745, 1214: 1429]

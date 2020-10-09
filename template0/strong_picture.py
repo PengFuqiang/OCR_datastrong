@@ -14,45 +14,64 @@ args = setup.parser_args()
 def bright(pic_name) :
     for j in range(args.num) :
         image = Image.open('template0\\res\\rotate\\pic' + pic_name + '.jpg')
+        txt = open('template0\\res\\txt\\pic' + pic_name + '.txt', 'r', encoding='utf-8')
+        txtdata = txt.read()
         # 亮度增强
         enh_bri = ImageEnhance.Brightness(image)
         cc1 = random.uniform(1.0 - args.bright_limit, 1.0 + args.bright_limit)  # 亮暗系数
         brightness = cc1
         image_brightened = enh_bri.enhance(brightness)
         image_brightened.save('template0\\res\\bright\\pic' + pic_name + '_' + str(j) + '_bri.jpg')
+        txt_bright = open('template0\\res\\strong_txt\\pic' + pic_name + '_' + str(j) + '_bri.txt', 'w', encoding='utf-8')
+        txt_bright.write(txtdata)
 
 
 def color(pic_name) :
     for j in range(args.num) :
         image = Image.open('template0\\res\\rotate\\pic' + pic_name + '.jpg')
+        txt = open('template0\\res\\txt\\pic' + pic_name + '.txt', 'r', encoding = 'utf-8')
+        txtdata = txt.read()
         # 色度增强
         enh_col = ImageEnhance.Color(image)
         cc2 = random.uniform(1.0 - args.color_limit, 1.0 + args.color_limit)  # 色度系数
         color_cc = cc2
         image_colored = enh_col.enhance(color_cc)
         image_colored.save('template0\\res\\color\\pic' + pic_name + '_' + str(j) + '_col.jpg')
+        txt_bright = open('template0\\res\\strong_txt\\pic' + pic_name + '_' + str(j) + '_col.txt', 'w',
+                          encoding = 'utf-8')
+        txt_bright.write(txtdata)
 
 
 def contrast(pic_name) :
     for j in range(args.num) :
         image = Image.open('template0\\res\\rotate\\pic' + pic_name + '.jpg')
+        txt = open('template0\\res\\txt\\pic' + pic_name + '.txt', 'r', encoding = 'utf-8')
+        txtdata = txt.read()
         # 对比度增强
         enh_con = ImageEnhance.Contrast(image)
         cc3 = random.uniform(1.0 - args.contrast_limit, 1.0 + args.contrast_limit)  # 对比度系数
         contrast_cc = cc3
         image_contrasted = enh_con.enhance(contrast_cc)
         image_contrasted.save('template0\\res\\contrast\\pic' + pic_name + '_' + str(j) + '_con.jpg')
+        txt_bright = open('template0\\res\\strong_txt\\pic' + pic_name + '_' + str(j) + '_con.txt', 'w',
+                          encoding = 'utf-8')
+        txt_bright.write(txtdata)
 
 
 def sharp(pic_name) :
     for j in range(args.num) :
         image = Image.open('template0\\res\\rotate\\pic' + pic_name + '.jpg')
+        txt = open('template0\\res\\txt\\pic' + pic_name + '.txt', 'r', encoding = 'utf-8')
+        txtdata = txt.read()
         # 锐度增强
         enh_sha = ImageEnhance.Sharpness(image)
         cc4 = random.uniform(2.0 - args.sharp_limit, 2.0 + args.sharp_limit)  # 锐度系数
         sharpness = cc4
         image_sharped = enh_sha.enhance(sharpness)
         image_sharped.save('template0\\res\\sharp\\pic' + pic_name + '_' + str(j) + '_sha.jpg')
+        txt_bright = open('template0\\res\\strong_txt\\pic' + pic_name + '_' + str(j) + '_sha.txt', 'w',
+                          encoding = 'utf-8')
+        txt_bright.write(txtdata)
 
 
 def part_bright(pic_name) :

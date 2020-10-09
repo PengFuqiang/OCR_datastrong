@@ -1,4 +1,4 @@
-#!\\usr\\bin\\env python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # author：pfq time:2020/7/1
 
@@ -24,7 +24,7 @@ rotate_angle : 图片旋转角度
 cx, cy ：图片中心点坐标
 index : 生成一定数量的图片需要循环，index是目前循环的次数 
 '''
-im = Image.open('template0\\pic_template\\template_1.jpg')
+im = Image.open('template0\\pic_template\\template_2.jpg')
 draw = ImageDraw.Draw(im)
 
 filename = 'template0\\res\\pic1.txt'
@@ -55,7 +55,7 @@ def xy_end(m1, n1, m2, n2, m3, n3, m4, n4) :
     m33, n33 = rotate(m3, n3)
     m44, n44 = rotate(m4, n4)
     return (str(m11) + ',' + str(n11) + ',' + str(m22) + ',' + str(n22) + ',' + str(m33) + ',' + str(n33) + ',' + str(
-        m44) + ',' + str(n44) + ' ')
+        m44) + ',' + str(n44) + ',')
 
 
 # 金额转换为中文大写
@@ -112,14 +112,14 @@ def print_date() :
     # 日期的坐标
     x1, y1 = 1500, 191
     x2, y2 = 1680, 191
-    x3, y3 = 1500, 219
-    x4, y4 = 1680, 219
+    x3, y3 = 1500, 223
+    x4, y4 = 1680, 223
     text = xy_end(x1, y1, x2, y2, x3, y3, x4, y4)
 
-    a1, b1 = 1341, 183
-    a2, b2 = 1479, 183
-    a3, b3 = 1341, 213
-    a4, b4 = 1479, 213
+    a1, b1 = 1325, 183
+    a2, b2 = 1482, 183
+    a3, b3 = 1325, 218
+    a4, b4 = 1482, 218
     bf_date = xy_end(a1, b1, a2, b2, a3, b3, a4, b4)
 
     with open(filename, 'a+', encoding = 'utf-8') as f :
@@ -142,7 +142,7 @@ def purchase() :
     draw.text((436, 253), name, fill = (8, 67, 161), font = global_var.ft6)
     name_length = len(name)
     x_start, y_start = 436, 253
-    x_end, y_end = 436 + (name_length * 26), 253 + 25
+    x_end, y_end = 436 + (name_length * 26), 253 + 32
 
     x1, y1 = x_start, y_start
     x2, y2 = x_end, y_start
@@ -150,10 +150,10 @@ def purchase() :
     x4, y4 = x_end, y_end
     text = xy_end(x1, y1, x2, y2, x3, y3, x4, y4)
 
-    a1, b1 = 225, 247
-    a2, b2 = 405, 247
-    a3, b3 = 225, 277
-    a4, b4 = 405, 277
+    a1, b1 = 227, 247
+    a2, b2 = 415, 247
+    a3, b3 = 227, 280
+    a4, b4 = 415, 280
     bf_text = xy_end(a1, b1, a2, b2, a3, b3, a4, b4)
     with open(filename, 'a+', encoding = 'utf-8') as f :
         f.write(bf_text + '名称：' + '\n')
@@ -166,14 +166,14 @@ def purchase() :
     draw.text((461, 290), id_num, fill = (8, 67, 161), font = global_var.ft7)
     id_x1, id_y1 = 461, 290
     id_x2, id_y2 = 744, 290
-    id_x3, id_y3 = 461, 315
-    id_x4, id_y4 = 744, 315
+    id_x3, id_y3 = 461, 325
+    id_x4, id_y4 = 744, 325
     text = xy_end(id_x1, id_y1, id_x2, id_y2, id_x3, id_y3, id_x4, id_y4)
 
-    id_a1, id_b1 = 225, 290
-    id_a2, id_b2 = 405, 290
-    id_a3, id_b3 = 225, 315
-    id_a4, id_b4 = 405, 315
+    id_a1, id_b1 = 227, 290
+    id_a2, id_b2 = 415, 290
+    id_a3, id_b3 = 227, 323
+    id_a4, id_b4 = 415, 323
     bf_text = xy_end(id_a1, id_b1, id_a2, id_b2, id_a3, id_b3, id_a4, id_b4)
     with open(filename, 'a+', encoding = 'utf-8') as f :
         f.write(bf_text + '纳税人识别号：' + '\n')
@@ -189,14 +189,14 @@ def purchase() :
     draw.text((433, 338), address_phone, fill = (8, 67, 161), font = global_var.ft8)
     add_ph_x1, add_ph_y1 = 433, 338
     add_ph_x2, add_ph_y2 = 433 + 21 * (add_len + 1) + 12 * 10, 338  # 十个号码加一个空格一个斜杠以及地址长度
-    add_ph_x3, add_ph_y3 = 433, 338 + 25
-    add_ph_x4, add_ph_y4 = 433 + 21 * (add_len + 1) + 12 * 10, 338 + 25
+    add_ph_x3, add_ph_y3 = 433, 338 + 32
+    add_ph_x4, add_ph_y4 = 433 + 21 * (add_len + 1) + 12 * 10, 338 + 32
     text = xy_end(add_ph_x1, add_ph_y1, add_ph_x2, add_ph_y2, add_ph_x3, add_ph_y3, add_ph_x4, add_ph_y4)
 
-    add_ph_a1, add_ph_b1 = 225, 334
-    add_ph_a2, add_ph_b2 = 405, 334
-    add_ph_a3, add_ph_b3 = 225, 360
-    add_ph_a4, add_ph_b4 = 405, 360
+    add_ph_a1, add_ph_b1 = 227, 334
+    add_ph_a2, add_ph_b2 = 415, 334
+    add_ph_a3, add_ph_b3 = 227, 369
+    add_ph_a4, add_ph_b4 = 415, 369
     bf_text = xy_end(add_ph_a1, add_ph_b1, add_ph_a2, add_ph_b2, add_ph_a3, add_ph_b3, add_ph_a4, add_ph_b4)
     with open(filename, 'a+', encoding = 'utf-8') as f :
         f.write(bf_text + '地址、电话：' + '\n')
@@ -217,14 +217,14 @@ def purchase() :
     draw.text((436, 380), bank_account, fill = (8, 67, 161), font = global_var.ft6)
     bank_x1, bank_y1 = 436, 380
     bank_x2, bank_y2 = 436 + bank_len * 26 + 14 * acc_len, 380
-    bank_x3, bank_y3 = 436, 380 + 25
-    bank_x4, bank_y4 = 436 + bank_len * 26 + 14 * acc_len, 380 + 25
+    bank_x3, bank_y3 = 436, 380 + 35
+    bank_x4, bank_y4 = 436 + bank_len * 26 + 14 * acc_len, 380 + 35
     text = xy_end(bank_x1, bank_y1, bank_x2, bank_y2, bank_x3, bank_y3, bank_x4, bank_y4)
 
-    bank_a1, bank_b1 = 225, 375
-    bank_a2, bank_b2 = 405, 375
-    bank_a3, bank_b3 = 225, 401
-    bank_a4, bank_b4 = 405, 401
+    bank_a1, bank_b1 = 227, 375
+    bank_a2, bank_b2 = 415, 375
+    bank_a3, bank_b3 = 227, 410
+    bank_a4, bank_b4 = 415, 410
     bf_text = xy_end(bank_a1, bank_b1, bank_a2, bank_b2, bank_a3, bank_b3, bank_a4, bank_b4)
     with open(filename, 'a+', encoding = 'utf-8') as f :
         f.write(bf_text + '开户行及账号：' + '\n')
@@ -238,7 +238,7 @@ def password() :
     """
     密码区每行长度都相同为66，高度为33
     """
-    stru = ['+', '-', '*', '\\', '<', '>', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']  # 组成密码的符号和数字
+    stru = ['+', '-', '*', '/', '<', '>', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']  # 组成密码的符号和数字
     pwd1 = ''.join(str(random.choice(stru)) for _ in range(27))
     pwd2 = ''.join(str(random.choice(stru)) for _ in range(27))
     pwd3 = ''.join(str(random.choice(stru)) for _ in range(27))
@@ -247,35 +247,35 @@ def password() :
     draw.text((1127, 290), pwd2, fill = (8, 67, 161), font = global_var.ft9)
     draw.text((1127, 323), pwd3, fill = (8, 67, 161), font = global_var.ft9)
     draw.text((1127, 356), pwd4, fill = (8, 67, 161), font = global_var.ft9)
-    # # 第一行密码的坐标
-    # pwd1_x1, pwd1_y1 = 1127, 257
-    # pwd1_x2, pwd1_y2 = 1693, 257
-    # pwd1_x3, pwd1_y3 = 1127, 288
-    # pwd1_x4, pwd1_y4 = 1693, 288
-    # pwd1_text = xy_end(pwd1_x1, pwd1_y1, pwd1_x2, pwd1_y2, pwd1_x3, pwd1_y3, pwd1_x4, pwd1_y4)
-    # # 第二行密码的坐标
-    # pwd2_x1, pwd2_y1 = 1127, 290
-    # pwd2_x2, pwd2_y2 = 1693, 290
-    # pwd2_x3, pwd2_y3 = 1127, 321
-    # pwd2_x4, pwd2_y4 = 1693, 321
-    # pwd2_text = xy_end(pwd2_x1, pwd2_y1, pwd2_x2, pwd2_y2, pwd2_x3, pwd2_y3, pwd2_x4, pwd2_y4)
-    # # 第三行密码的坐标
-    # pwd3_x1, pwd3_y1 = 1127, 323
-    # pwd3_x2, pwd3_y2 = 1693, 323
-    # pwd3_x3, pwd3_y3 = 1127, 354
-    # pwd3_x4, pwd3_y4 = 1693, 354
-    # pwd3_text = xy_end(pwd3_x1, pwd3_y1, pwd3_x2, pwd3_y2, pwd3_x3, pwd3_y3, pwd3_x4, pwd3_y4)
-    # # 第四行密码的坐标
-    # pwd4_x1, pwd4_y1 = 1127, 356
-    # pwd4_x2, pwd4_y2 = 1693, 356
-    # pwd4_x3, pwd4_y3 = 1127, 387
-    # pwd4_x4, pwd4_y4 = 1693, 387
-    # pwd4_text = xy_end(pwd4_x1, pwd4_y1, pwd4_x2, pwd4_y2, pwd4_x3, pwd4_y3, pwd4_x4, pwd4_y4)
-    # with open(filename, 'a+', encoding = 'utf-8') as f :
-    #     f.write(pwd1_text + pwd1 + '\n')
-    #     f.write(pwd2_text + pwd2 + '\n')
-    #     f.write(pwd3_text + pwd3 + '\n')
-    #     f.write(pwd4_text + pwd4 + '\n')
+    # 第一行密码的坐标
+    pwd1_x1, pwd1_y1 = 1127, 257
+    pwd1_x2, pwd1_y2 = 1693, 257
+    pwd1_x3, pwd1_y3 = 1127, 288
+    pwd1_x4, pwd1_y4 = 1693, 288
+    pwd1_text = xy_end(pwd1_x1, pwd1_y1, pwd1_x2, pwd1_y2, pwd1_x3, pwd1_y3, pwd1_x4, pwd1_y4)
+    # 第二行密码的坐标
+    pwd2_x1, pwd2_y1 = 1127, 290
+    pwd2_x2, pwd2_y2 = 1693, 290
+    pwd2_x3, pwd2_y3 = 1127, 321
+    pwd2_x4, pwd2_y4 = 1693, 321
+    pwd2_text = xy_end(pwd2_x1, pwd2_y1, pwd2_x2, pwd2_y2, pwd2_x3, pwd2_y3, pwd2_x4, pwd2_y4)
+    # 第三行密码的坐标
+    pwd3_x1, pwd3_y1 = 1127, 323
+    pwd3_x2, pwd3_y2 = 1693, 323
+    pwd3_x3, pwd3_y3 = 1127, 354
+    pwd3_x4, pwd3_y4 = 1693, 354
+    pwd3_text = xy_end(pwd3_x1, pwd3_y1, pwd3_x2, pwd3_y2, pwd3_x3, pwd3_y3, pwd3_x4, pwd3_y4)
+    # 第四行密码的坐标
+    pwd4_x1, pwd4_y1 = 1127, 356
+    pwd4_x2, pwd4_y2 = 1693, 356
+    pwd4_x3, pwd4_y3 = 1127, 387
+    pwd4_x4, pwd4_y4 = 1693, 387
+    pwd4_text = xy_end(pwd4_x1, pwd4_y1, pwd4_x2, pwd4_y2, pwd4_x3, pwd4_y3, pwd4_x4, pwd4_y4)
+    with open(filename, 'a+', encoding = 'utf-8') as f :
+        f.write(pwd1_text + pwd1 + '\n')
+        f.write(pwd2_text + pwd2 + '\n')
+        f.write(pwd3_text + pwd3 + '\n')
+        f.write(pwd4_text + pwd4 + '\n')
 
 
 # 添加货物或应税劳务及后面对应的规格价格等内容
@@ -284,8 +284,8 @@ def change_line(y) :
     draw.text((185, y), goods, fill = (8, 67, 161), font = global_var.ft6)
     goods_x1, goods_y1 = 185, y
     goods_x2, goods_y2 = 185 + 3 * 26, y
-    goods_x3, goods_y3 = 185, y + 25
-    goods_x4, goods_y4 = 185 + 3 * 26, y + 25
+    goods_x3, goods_y3 = 185, y + 32
+    goods_x4, goods_y4 = 185 + 3 * 26, y + 32
     goods_text = xy_end(goods_x1, goods_y1, goods_x2, goods_y2, goods_x3, goods_y3, goods_x4, goods_y4)
     with open(filename, 'a+', encoding = 'utf-8') as f :
         f.write(goods_text + goods + '\n')
@@ -309,54 +309,54 @@ def add_goods() :
     total2 = 0  # 各个税额之和
     total = 0
 
-    goods_a1, goods_b1 = 198, 418
-    goods_a2, goods_b2 = 525, 418
-    goods_a3, goods_b3 = 198, 444
-    goods_a4, goods_b4 = 525, 444
+    goods_a1, goods_b1 = 200, 417
+    goods_a2, goods_b2 = 537, 417
+    goods_a3, goods_b3 = 200, 449
+    goods_a4, goods_b4 = 537, 449
     bf_goods_text = xy_end(goods_a1, goods_b1, goods_a2, goods_b2, goods_a3, goods_b3, goods_a4, goods_b4)
 
-    standards_a1, standards_b1 = 612, 418
-    standards_a2, standards_b2 = 732, 418
-    standards_a3, standards_b3 = 612, 444
-    standards_a4, standards_b4 = 732, 444
+    standards_a1, standards_b1 = 609, 417
+    standards_a2, standards_b2 = 737, 417
+    standards_a3, standards_b3 = 609, 447
+    standards_a4, standards_b4 = 737, 447
     bf_standards_text = xy_end(standards_a1, standards_b1, standards_a2, standards_b2, standards_a3, standards_b3,
                                standards_a4, standards_b4)
-    units_a1, units_b1 = 797, 418
-    units_a2, units_b2 = 851, 418
-    units_a3, units_b3 = 797, 444
-    units_a4, units_b4 = 851, 444
+    units_a1, units_b1 = 794, 417
+    units_a2, units_b2 = 857, 417
+    units_a3, units_b3 = 794, 450
+    units_a4, units_b4 = 857, 450
     bf_units_text = xy_end(units_a1, units_b1, units_a2, units_b2, units_a3, units_b3, units_a4, units_b4)
 
-    amount_a1, amount_b1 = 917, 418
-    amount_a2, amount_b2 = 993, 418
-    amount_a3, amount_b3 = 917, 444
-    amount_a4, amount_b4 = 993, 444
+    amount_a1, amount_b1 = 911, 418
+    amount_a2, amount_b2 = 998, 418
+    amount_a3, amount_b3 = 911, 450
+    amount_a4, amount_b4 = 998, 450
     bf_amount_text = xy_end(amount_a1, amount_b1, amount_a2, amount_b2, amount_a3, amount_b3, amount_a4, amount_b4)
 
-    unit_price_a1, unit_price_b1 = 1081, 418
+    unit_price_a1, unit_price_b1 = 1070, 418
     unit_price_a2, unit_price_b2 = 1156, 418
-    unit_price_a3, unit_price_b3 = 1081, 444
-    unit_price_a4, unit_price_b4 = 1156, 444
+    unit_price_a3, unit_price_b3 = 1070, 450
+    unit_price_a4, unit_price_b4 = 1156, 450
     bf_unit_price_text = xy_end(unit_price_a1, unit_price_b1, unit_price_a2, unit_price_b2, unit_price_a3,
                                 unit_price_b3, unit_price_a4, unit_price_b4)
 
-    total_price_a1, total_price_b1 = 1266, 418
+    total_price_a1, total_price_b1 = 1255, 418
     total_price_a2, total_price_b2 = 1377, 418
-    total_price_a3, total_price_b3 = 1266, 444
-    total_price_a4, total_price_b4 = 1377, 444
+    total_price_a3, total_price_b3 = 1255, 450
+    total_price_a4, total_price_b4 = 1377, 450
     bf_total_price_text = xy_end(total_price_a1, total_price_b1, total_price_a2, total_price_b2, total_price_a3,
                                  total_price_b3, total_price_a4, total_price_b4)
 
-    rate_a1, rate_b1 = 1452, 418
-    rate_a2, rate_b2 = 1512, 418
-    rate_a3, rate_b3 = 1452, 444
-    rate_a4, rate_b4 = 1512, 444
+    rate_a1, rate_b1 = 1440, 419
+    rate_a2, rate_b2 = 1510, 419
+    rate_a3, rate_b3 = 1440, 450
+    rate_a4, rate_b4 = 1510, 450
     bf_rate_text = xy_end(rate_a1, rate_b1, rate_a2, rate_b2, rate_a3, rate_b3, rate_a4, rate_b4)
 
-    tax_a1, tax_b1 = 1588, 418
-    tax_a2, tax_b2 = 1699, 418
-    tax_a3, tax_b3 = 1588, 444
-    tax_a4, tax_b4 = 1699, 444
+    tax_a1, tax_b1 = 1573, 419
+    tax_a2, tax_b2 = 1696, 419
+    tax_a3, tax_b3 = 1573, 450
+    tax_a4, tax_b4 = 1696, 450
     bf_tax_text = xy_end(tax_a1, tax_b1, tax_a2, tax_b2, tax_a3, tax_b3, tax_a4, tax_b4)
     with open(filename, 'a+', encoding = 'utf-8') as f :  # 写入坐标信息
         f.write(bf_goods_text + '货物或应税劳务、服务名称' + '\n')
@@ -389,31 +389,34 @@ def add_goods() :
             continue
 
         draw.text((185, y), goods, fill = (8, 67, 161), font = global_var.ft6)  # 添加货物
-        draw.text((586, y), standards, fill = (8, 67, 161), font = global_var.ft6)  # 添加型号规格
-        draw.text((804, y), unit, fill = (8, 67, 161), font = global_var.ft6)  # 添加单位
+        if standards :
+            draw.text((586, y), standards, fill = (8, 67, 161), font = global_var.ft6)  # 添加型号规格
+        if unit :
+            draw.text((804, y), unit, fill = (8, 67, 161), font = global_var.ft6)  # 添加单位
+
 
         # 获取货物，型号，单位旋转后的坐标
         goods_x1, goods_y1 = 185, y
         goods_x2, goods_y2 = 185 + goods_len * 26, y
         if goods_x2 > 578 :
             goods_x2 = 578
-        goods_x3, goods_y3 = 185, y + 25
-        goods_x4, goods_y4 = 185 + goods_len * 26, y + 25
+        goods_x3, goods_y3 = 185, y + 32
+        goods_x4, goods_y4 = 185 + goods_len * 26, y + 32
         if goods_x4 > 578 :
             goods_x4 = 578
         goods_text = xy_end(goods_x1, goods_y1, goods_x2, goods_y2, goods_x3, goods_y3, goods_x4, goods_y4)
 
         standards_x1, standards_y1 = 586, y
         standards_x2, standards_y2 = 586 + 25 * (len(standards)), y
-        standards_x3, standards_y3 = 586, y + 25
-        standards_x4, standards_y4 = 586 + 25 * (len(standards)), y + 25
+        standards_x3, standards_y3 = 586, y + 32
+        standards_x4, standards_y4 = 586 + 25 * (len(standards)), y + 32
         standards_text = xy_end(standards_x1, standards_y1, standards_x2, standards_y2, standards_x3, standards_y3,
                                 standards_x4, standards_y4)
 
         units_x1, units_y1 = 804, y
         units_x2, units_y2 = 804 + 48, y
-        units_x3, units_y3 = 804, y + 25
-        units_x4, units_y4 = 804 + 48, y + 25
+        units_x3, units_y3 = 804, y + 32
+        units_x4, units_y4 = 804 + 48, y + 32
         units_text = xy_end(units_x1, units_y1, units_x2, units_y2, units_x3, units_y3, units_x4, units_y4)
 
         # 最终坐标写入到文件中
@@ -436,16 +439,16 @@ def add_goods() :
         # 计算商品数量的坐标
         amount_x1, amount_y1 = 909 + 12 * (8 - len(str(amount))), y
         amount_x2, amount_y2 = 1013, y
-        amount_x3, amount_y3 = 909 + 12 * (8 - len(str(amount))), y + 25
-        amount_x4, amount_y4 = 1013, y + 25
+        amount_x3, amount_y3 = 909 + 12 * (8 - len(str(amount))), y + 32
+        amount_x4, amount_y4 = 1013, y + 32
         amount_text = xy_end(amount_x1, amount_y1, amount_x2, amount_y2, amount_x3, amount_y3, amount_x4, amount_y4)
 
         # 计算单价的坐标
         draw.text((1069, y), ("%.2f" % unit_price).rjust(8), fill = (8, 67, 161), font = global_var.ft13)  # 添加单价
         unit_price_x1, unit_price_y1 = 1069 + 13 * (8 - len(str(round(unit_price, 2)))), y
         unit_price_x2, unit_price_y2 = 1172, y
-        unit_price_x3, unit_price_y3 = 1069 + 13 * (8 - len(str(round(unit_price, 2)))), y + 25
-        unit_price_x4, unit_price_y4 = 1172, y + 25
+        unit_price_x3, unit_price_y3 = 1069 + 13 * (8 - len(str(round(unit_price, 2)))), y + 32
+        unit_price_x4, unit_price_y4 = 1172, y + 32
         unit_price_text = xy_end(unit_price_x1, unit_price_y1, unit_price_x2, unit_price_y2, unit_price_x3,
                                  unit_price_y3, unit_price_x4, unit_price_y4)
 
@@ -453,8 +456,8 @@ def add_goods() :
         draw.text((1290, y), ("%.2f" % total_price).rjust(11), fill = (8, 67, 161), font = global_var.ft13)  # 添加金额
         total_price_x1, total_price_y1 = 1290 + 13 * (8 - len(str(round(total_price, 2)))), y
         total_price_x2, total_price_y2 = 1435, y
-        total_price_x3, total_price_y3 = 1290 + 13 * (8 - len(str(round(total_price, 2)))), y + 25
-        total_price_x4, total_price_y4 = 1435, y + 25
+        total_price_x3, total_price_y3 = 1290 + 13 * (8 - len(str(round(total_price, 2)))), y + 32
+        total_price_x4, total_price_y4 = 1435, y + 32
         total_price_text = xy_end(total_price_x1, total_price_y1, total_price_x2, total_price_y2, total_price_x3,
                                   total_price_y3, total_price_x4, total_price_y4)
 
@@ -462,16 +465,16 @@ def add_goods() :
         draw.text((1480, y), str(rate) + '%', fill = (8, 67, 161), font = global_var.ft13)  # 添加税率
         rate_x1, rate_y1 = 1480, y
         rate_x2, rate_y2 = 1521, y
-        rate_x3, rate_y3 = 1480, y + 25
-        rate_x4, rate_y4 = 1521, y + 25
+        rate_x3, rate_y3 = 1480, y + 32
+        rate_x4, rate_y4 = 1521, y + 32
         rate_text = xy_end(rate_x1, rate_y1, rate_x2, rate_y2, rate_x3, rate_y3, rate_x4, rate_y4)
 
         # 计算税额的坐标
         draw.text((1600, y), ("%.2f" % tax_amount).rjust(10), fill = (8, 67, 161), font = global_var.ft13)  # 添加税额
         tax_x1, tax_y1 = 1600 + 13 * (10 - len(str(round(tax_amount, 2)))), y
         tax_x2, tax_y2 = 1730, y
-        tax_x3, tax_y3 = 1600 + 13 * (10 - len(str(round(tax_amount, 2)))), y + 25
-        tax_x4, tax_y4 = 1730, y + 25
+        tax_x3, tax_y3 = 1600 + 13 * (10 - len(str(round(tax_amount, 2)))), y + 32
+        tax_x4, tax_y4 = 1730, y + 32
         tax_text = xy_end(tax_x1, tax_y1, tax_x2, tax_y2, tax_x3, tax_y3, tax_x4, tax_y4)
 
         with open(filename, 'a+', encoding = 'utf-8') as f :  # 写入坐标信息
@@ -500,49 +503,49 @@ def add_goods() :
     draw.text((654, 778), big_total, fill = (8, 67, 161), font = global_var.ft11)  # 添加金额税额之和的中文大写
 
     total_a1, total_b1 = 275, 725
-    total_a2, total_b2 = 453, 725
-    total_a3, total_b3 = 275, 751
-    total_a4, total_b4 = 453, 751
+    total_a2, total_b2 = 463, 725
+    total_a3, total_b3 = 275, 757
+    total_a4, total_b4 = 463, 757
     bf_total_text = xy_end(total_a1, total_b1, total_a2, total_b2, total_a3, total_b3, total_a4, total_b4)
     # 金额之和坐标
     total1_x1, total1_y1 = 1214, 715
-    total1_x2, total1_y2 = 1244 + 19 * len(str("%.2f" % total1)), 715
-    total1_x3, total1_y3 = 1214, 740
-    total1_x4, total1_y4 = 1244 + 19 * len(str("%.2f" % total1)), 740
+    total1_x2, total1_y2 = 1244 + 20 * len(str("%.2f" % total1)), 715
+    total1_x3, total1_y3 = 1214, 749
+    total1_x4, total1_y4 = 1244 + 20 * len(str("%.2f" % total1)), 749
     total1_text = xy_end(total1_x1, total1_y1, total1_x2, total1_y2, total1_x3, total1_y3, total1_x4, total1_y4)
 
     # 税额之和坐标
     total2_x1, total2_y1 = 1541, 715
     total2_x2, total2_y2 = 1571 + 19 * len("%.2f" % total2), 715
-    total2_x3, total2_y3 = 1541, 740
-    total2_x4, total2_y4 = 1571 + 19 * len("%.2f" % total2), 740
+    total2_x3, total2_y3 = 1541, 747
+    total2_x4, total2_y4 = 1571 + 19 * len("%.2f" % total2), 747
     total2_text = xy_end(total2_x1, total2_y1, total2_x2, total2_y2, total2_x3, total2_y3, total2_x4, total2_y4)
 
     # 金额+税额之和的坐标
     total_x1, total_y1 = 1410, 781
     total_x2, total_y2 = 1440 + 19 * len("%.2f" % total), 781
-    total_x3, total_y3 = 1410, 806
-    total_x4, total_y4 = 1440 + 19 * len("%.2f" % total), 806
+    total_x3, total_y3 = 1410, 813
+    total_x4, total_y4 = 1440 + 19 * len("%.2f" % total), 813
     total_text = xy_end(total_x1, total_y1, total_x2, total_y2, total_x3, total_y3, total_x4, total_y4)
 
     small_total_a1, small_total_b1 = 1315, 777
-    small_total_a2, small_total_b2 = 1413, 777
-    small_total_a3, small_total_b3 = 1315, 803
-    small_total_a4, small_total_b4 = 1413, 803
+    small_total_a2, small_total_b2 = 1410, 777
+    small_total_a3, small_total_b3 = 1315, 812
+    small_total_a4, small_total_b4 = 1410, 812
     bf_small_total = xy_end(small_total_a1, small_total_b1, small_total_a2, small_total_b2, small_total_a3,
                             small_total_b3, small_total_a4, small_total_b4)
 
     # 大写金额税额之和的坐标
     big_x1, big_y1 = 654, 778
     big_x2, big_y2 = 654 + 26 * len(big_total), 778
-    big_x3, big_y3 = 654, 803  # 778 + 25
-    big_x4, big_y4 = 654 + 26 * len(big_total), 803
+    big_x3, big_y3 = 654, 813  # 778 + 35
+    big_x4, big_y4 = 654 + 26 * len(big_total), 813
     big_text = xy_end(big_x1, big_y1, big_x2, big_y2, big_x3, big_y3, big_x4, big_y4)
 
-    big_a1, big_b1 = 248, 780
-    big_a2, big_b2 = 477, 780
-    big_a3, big_b3 = 248, 806
-    big_a4, big_b4 = 477, 806
+    big_a1, big_b1 = 246, 778
+    big_a2, big_b2 = 490, 778
+    big_a3, big_b3 = 246, 810
+    big_a4, big_b4 = 490, 810
     bf_big_text = xy_end(big_a1, big_b1, big_a2, big_b2, big_a3, big_b3, big_a4, big_b4)
     # 写入坐标
     with open(filename, 'a+', encoding = 'utf-8') as f :
@@ -569,13 +572,13 @@ def add_seller() :  # 添加销售方名称
     draw.text((436, 840), seller_name, fill = (8, 67, 161), font = global_var.ft6)
     x1, y1 = 436, 840
     x2, y2 = 436 + 27 * len(seller_name), 840
-    x3, y3 = 436, 840 + 25
-    x4, y4 = 436 + 27 * len(seller_name), 840 + 25
+    x3, y3 = 436, 840 + 30
+    x4, y4 = 436 + 27 * len(seller_name), 840 + 30
     text = xy_end(x1, y1, x2, y2, x3, y3, x4, y4)
     a1, b1 = 228, 838
     a2, b2 = 405, 838
-    a3, b3 = 228, 863
-    a4, b4 = 405, 863
+    a3, b3 = 228, 868
+    a4, b4 = 405, 868
     bf_text = xy_end(a1, b1, a2, b2, a3, b3, a4, b4)
     with open(filename, 'a+', encoding = 'utf-8') as f :
         f.write(bf_text + '名称：' + '\n')
@@ -595,14 +598,14 @@ def seller_nums() :  # 添加纳税人识别号（销售方）
     draw.text((470, 872), seller_num, fill = (8, 67, 141), font = global_var.ft7)
     x1, y1 = 470, 872
     x2, y2 = 470 + 20 * len(seller_num), 872
-    x3, y3 = 470, 897
-    x4, y4 = 470 + 20 * len(seller_num), 897
+    x3, y3 = 470, 902
+    x4, y4 = 470 + 20 * len(seller_num), 902
     text = xy_end(x1, y1, x2, y2, x3, y3, x4, y4)
 
     a1, b1 = 228, 872
     a2, b2 = 405, 872
-    a3, b3 = 228, 897
-    a4, b4 = 405, 897
+    a3, b3 = 228, 907
+    a4, b4 = 405, 907
     bf_text = xy_end(a1, b1, a2, b2, a3, b3, a4, b4)
     with open(filename, 'a+', encoding = 'utf-8') as f :
         f.write(bf_text + '纳税人识别号：' + '\n')
@@ -623,14 +626,14 @@ def add_and_phone() :  # 添加地址、电话（销售方）
     draw.text((420, 915), address_phone, fill = (8, 67, 141), font = global_var.ft6)
     x1, y1 = 420, 915
     x2, y2 = 420 + 26 * (add_len + 1) + 14 * 7, 915
-    x3, y3 = 420, 940
-    x4, y4 = 420 + 26 * (add_len + 1) + 14 * 7, 940
+    x3, y3 = 420, 945
+    x4, y4 = 420 + 26 * (add_len + 1) + 14 * 7, 945
     text = xy_end(x1, y1, x2, y2, x3, y3, x4, y4)
 
     a1, b1 = 228, 910
     a2, b2 = 405, 910
-    a3, b3 = 228, 935
-    a4, b4 = 405, 935
+    a3, b3 = 228, 943
+    a4, b4 = 405, 943
     bf_text = xy_end(a1, b1, a2, b2, a3, b3, a4, b4)
     with open(filename, 'a+', encoding = 'utf-8') as f :
         f.write(bf_text + '地址、电话：' + '\n')
@@ -656,14 +659,14 @@ def add_bankId() :  # 添加开户行及账号
     draw.text((420, 950), bank_and_account, fill = (8, 67, 161), font = global_var.ft6)
     x1, y1 = 420, 950
     x2, y2 = 420 + 26 * (bank_len + 1) + 14 * acc_len, 950
-    x3, y3 = 420, 975
-    x4, y4 = 420 + 26 * (bank_len + 1) + 14 * acc_len, 975
+    x3, y3 = 420, 980
+    x4, y4 = 420 + 26 * (bank_len + 1) + 14 * acc_len, 980
     text = xy_end(x1, y1, x2, y2, x3, y3, x4, y4)
 
     a1, b1 = 228, 948
     a2, b2 = 405, 948
-    a3, b3 = 228, 973
-    a4, b4 = 405, 973
+    a3, b3 = 228, 980
+    a4, b4 = 405, 980
     bf_text = xy_end(a1, b1, a2, b2, a3, b3, a4, b4)
     with open(filename, 'a+', encoding = 'utf-8') as f :
         f.write(bf_text + '开户行及账号：' + '\n')
@@ -684,38 +687,38 @@ def add_name() :
 
     n1_x1, n1_y1 = 305, 995
     n1_x2, n1_y2 = 305 + 27 * len(name1), 995
-    n1_x3, n1_y3 = 305, 1020
-    n1_x4, n1_y4 = 305 + 27 * len(name1), 1020
+    n1_x3, n1_y3 = 305, 1025
+    n1_x4, n1_y4 = 305 + 27 * len(name1), 1025
     n1_text = xy_end(n1_x1, n1_y1, n1_x2, n1_y2, n1_x3, n1_y3, n1_x4, n1_y4)
 
-    n1_a1, n1_b1 = 185, 995
-    n1_a2, n1_b2 = 297, 995
-    n1_a3, n1_b3 = 185, 1025
-    n1_a4, n1_b4 = 297, 1025
+    n1_a1, n1_b1 = 182, 995
+    n1_a2, n1_b2 = 305, 995
+    n1_a3, n1_b3 = 182, 1030
+    n1_a4, n1_b4 = 305, 1030
     bf_n1 = xy_end(n1_a1, n1_b1, n1_a2, n1_b2, n1_a3, n1_b3, n1_a4, n1_b4)
 
     n2_x1, n2_y1 = 722, 995
     n2_x2, n2_y2 = 722 + 27 * len(name2), 995
-    n2_x3, n2_y3 = 722, 1020
-    n2_x4, n2_y4 = 722 + 27 * len(name2), 1020
+    n2_x3, n2_y3 = 722, 1025
+    n2_x4, n2_y4 = 722 + 27 * len(name2), 1025
     n2_text = xy_end(n2_x1, n2_y1, n2_x2, n2_y2, n2_x3, n2_y3, n2_x4, n2_y4)
 
-    n2_a1, n2_b1 = 635, 995
-    n2_a2, n2_b2 = 713, 995
-    n2_a3, n2_b3 = 635, 1025
-    n2_a4, n2_b4 = 713, 1025
+    n2_a1, n2_b1 = 630, 995
+    n2_a2, n2_b2 = 720, 995
+    n2_a3, n2_b3 = 630, 1030
+    n2_a4, n2_b4 = 720, 1030
     bf_n2 = xy_end(n2_a1, n2_b1, n2_a2, n2_b2, n2_a3, n2_b3, n2_a4, n2_b4)
 
     n3_x1, n3_y1 = 1099, 995
     n3_x2, n3_y2 = 1099 + 27 * len(name2), 995
-    n3_x3, n3_y3 = 1099, 1020
-    n3_x4, n3_y4 = 1099 + 27 * len(name2), 1020
+    n3_x3, n3_y3 = 1099, 1025
+    n3_x4, n3_y4 = 1099 + 27 * len(name2), 1025
     n3_text = xy_end(n3_x1, n3_y1, n3_x2, n3_y2, n3_x3, n3_y3, n3_x4, n3_y4)
 
-    n3_a1, n3_b1 = 975, 995
-    n3_a2, n3_b2 = 1090, 995
-    n3_a3, n3_b3 = 975, 1025
-    n3_a4, n3_b4 = 1090, 1025
+    n3_a1, n3_b1 = 970, 995
+    n3_a2, n3_b2 = 1095, 995
+    n3_a3, n3_b3 = 970, 1030
+    n3_a4, n3_b4 = 1095, 1030
     bf_n3 = xy_end(n3_a1, n3_b1, n3_a2, n3_b2, n3_a3, n3_b3, n3_a4, n3_b4)
     with open(filename, 'a+', encoding = 'utf-8') as f :
         f.write(bf_n1 + '收款人：' + '\n')
@@ -799,10 +802,10 @@ def add(time_str) :
 
     # 旋转图片
     img = cv.imread('template0\\pic_origin\\res' + str(index) + '.jpg')
-    sp.split_to_box(img, time_str)
+    # sp.split_to_box(img, time_str)
     rot_mat = cv.getRotationMatrix2D((cx, cy), rotate_angle, 1)
     img_rotated_by_alpha = cv.warpAffine(img, rot_mat, (img.shape[1], img.shape[0]))
-    blur_num = int(random.choice(['1', '3', '1', '1']))  # 模糊图片的程度
+    blur_num = int(random.choice(['3', '1', '3', '1']))  # 模糊图片的程度
     dst_img = cv.GaussianBlur(img_rotated_by_alpha, (blur_num, blur_num), 0)
 
     cv.imwrite('template0\\res\\rotate\\pic' + time_str + '.jpg', dst_img)  # 保存高斯模糊处理+仿射变换后的图片
@@ -811,9 +814,9 @@ def add(time_str) :
 
 def before_add(template_num) :
     if template_num == 1 :
-        name = "上海增值税专用发票"
-    elif template_num == 2 :
         name = "湖北增值税专用发票"
+    elif template_num == 2 :
+        name = "上海增值税专用发票"
     elif template_num == 3 :
         name = "江苏增值税专用发票"
     else :
@@ -821,8 +824,8 @@ def before_add(template_num) :
 
     a1, b1 = 695, 49
     a2, b2 = 1205, 49
-    a3, b3 = 695, 105
-    a4, b4 = 1205, 105
+    a3, b3 = 695, 110
+    a4, b4 = 1205, 110
     fapiao = xy_end(a1, b1, a2, b2, a3, b3, a4, b4)
     with open(filename, 'a+', encoding = 'utf-8') as f :
         f.write(fapiao + name + '\n')
@@ -842,11 +845,11 @@ def main() :
         global kv_filename
         global rotate_angle
         global cx, cy
-        template_num = random.randint(1, 4)
+        template_num = random.randint(2, 4)
         im = Image.open('template0\\pic_template\\template_' + str(template_num) + '.jpg')  # 随机挑选一个模板图
         draw = ImageDraw.Draw(im)
-        rotate_angle = 0
-        # rotate_angle = random.uniform(-args.angle, args.angle)  # 生成随机的旋转角度（正数为逆时针）
+        # rotate_angle = 0
+        rotate_angle = random.uniform(-args.angle, args.angle)  # 生成随机的旋转角度（正数为逆时针）
         '''
         模板图片尺寸和处理后的图片尺寸是一致的
         所以中心点是一样的

@@ -15,7 +15,7 @@ import template1.tmp1_split_pic as sp
 import global_var as gl
 import template1.tmp1_strong_pic as strong
 
-im = Image.open('template0\\pic_template\\template_1.jpg')
+im = Image.open('template0\\pic_template\\template_2.jpg')
 draw = ImageDraw.Draw(im)
 filename = 'template0\\res\\pic1.txt'
 kv_filename = 'template0\\res\\pic1_kv.txt'
@@ -101,16 +101,16 @@ def print_date() :
     date = fake.date(pattern = '%Y年%m月%d日')
     draw.text((1477, 187), date, fill = (31, 83, 182), font = gl.ft5)
     # 日期的坐标
-    x1, y1 = 1477, 187
-    x2, y2 = 1684, 187
-    x3, y3 = 1477, 215
-    x4, y4 = 1684, 215
+    x1, y1 = 1430, 171
+    x2, y2 = 1610, 171
+    x3, y3 = 1430, 208
+    x4, y4 = 1610, 208
     text = xy_end(x1, y1, x2, y2, x3, y3, x4, y4)
 
-    a1, b1 = 1292, 178
-    a2, b2 = 1432, 178
-    a3, b3 = 1292, 206
-    a4, b4 = 1432, 206
+    a1, b1 = 1293, 171
+    a2, b2 = 1437, 171
+    a3, b3 = 1293, 208
+    a4, b4 = 1437, 208
     bf_date = xy_end(a1, b1, a2, b2, a3, b3, a4, b4)
 
     with open(filename, 'a+', encoding = 'utf-8') as f :
@@ -130,10 +130,10 @@ def purchase() :
     """
     # 添加公司名称
     name = fake.company()  # 随机生成公司名称
-    draw.text((373, 250), name, fill = (70, 93, 223), font = gl.ft6)
+    draw.text((350, 246), name, fill = (70, 93, 223), font = gl.ft6)
     name_length = len(name)
-    x_start, y_start = 373, 250
-    x_end, y_end = 373 + (name_length * 27), 250 + 26
+    x_start, y_start = 350, 246
+    x_end, y_end = 350 + (name_length * 27), 246 + 30
 
     x1, y1 = x_start, y_start
     x2, y2 = x_end, y_start
@@ -141,10 +141,10 @@ def purchase() :
     x4, y4 = x_end, y_end
     text = xy_end(x1, y1, x2, y2, x3, y3, x4, y4)
 
-    a1, b1 = 153, 241
-    a2, b2 = 336, 241
-    a3, b3 = 153, 267
-    a4, b4 = 336, 267
+    a1, b1 = 156, 238
+    a2, b2 = 339, 238
+    a3, b3 = 156, 271
+    a4, b4 = 339, 271
     bf_text = xy_end(a1, b1, a2, b2, a3, b3, a4, b4)
     with open(filename, 'a+', encoding = 'utf-8') as f :
         f.write(bf_text + '名称：' + '\n')
@@ -154,17 +154,17 @@ def purchase() :
 
     # 添加纳税人识别号
     id_num = ''.join(str(random.choice(range(10))) for _ in range(15))  # 随机生成15位纳税人识别号
-    draw.text((405, 291), id_num, fill = (70, 93, 223), font = gl.ft7)
-    id_x1, id_y1 = 405, 291
-    id_x2, id_y2 = 688, 291
-    id_x3, id_y3 = 405, 317
-    id_x4, id_y4 = 688, 317
+    draw.text((376, 285), id_num, fill = (70, 93, 223), font = gl.ft7)
+    id_x1, id_y1 = 376, 285
+    id_x2, id_y2 = 663, 285
+    id_x3, id_y3 = 376, 315
+    id_x4, id_y4 = 663, 315
     text = xy_end(id_x1, id_y1, id_x2, id_y2, id_x3, id_y3, id_x4, id_y4)
 
-    id_a1, id_b1 = 153, 283
-    id_a2, id_b2 = 336, 283
-    id_a3, id_b3 = 153, 309
-    id_a4, id_b4 = 336, 309
+    id_a1, id_b1 = 151, 282
+    id_a2, id_b2 = 337, 282
+    id_a3, id_b3 = 151, 315
+    id_a4, id_b4 = 337, 315
     bf_text = xy_end(id_a1, id_b1, id_a2, id_b2, id_a3, id_b3, id_a4, id_b4)
     with open(filename, 'a+', encoding = 'utf-8') as f :
         f.write(bf_text + '纳税人识别号：' + '\n')
@@ -177,17 +177,17 @@ def purchase() :
     address = fake.address()[0 : -7]
     add_len = len(address)
     address_phone = address + ' ' + phone1 + '-' + phone2
-    draw.text((373, 335), address_phone, fill = (70, 93, 223), font = gl.ft8)
-    add_ph_x1, add_ph_y1 = 373, 335
-    add_ph_x2, add_ph_y2 = 373 + 21 * (add_len + 1) + 12 * 10, 335  # 十个号码加一个空格一个斜杠以及地址长度
-    add_ph_x3, add_ph_y3 = 373, 335 + 24
-    add_ph_x4, add_ph_y4 = 373 + 21 * (add_len + 1) + 12 * 10, 335 + 24
+    draw.text((350, 335), address_phone, fill = (70, 93, 223), font = gl.ft8)
+    add_ph_x1, add_ph_y1 = 350, 335
+    add_ph_x2, add_ph_y2 = 350 + 21 * (add_len + 1) + 12 * 10, 335  # 十个号码加一个空格一个斜杠以及地址长度
+    add_ph_x3, add_ph_y3 = 350, 335 + 30
+    add_ph_x4, add_ph_y4 = 350 + 21 * (add_len + 1) + 12 * 10, 335 + 30
     text = xy_end(add_ph_x1, add_ph_y1, add_ph_x2, add_ph_y2, add_ph_x3, add_ph_y3, add_ph_x4, add_ph_y4)
 
-    add_ph_a1, add_ph_b1 = 153, 333
-    add_ph_a2, add_ph_b2 = 336, 333
-    add_ph_a3, add_ph_b3 = 153, 359
-    add_ph_a4, add_ph_b4 = 336, 359
+    add_ph_a1, add_ph_b1 = 151, 325
+    add_ph_a2, add_ph_b2 = 340, 325
+    add_ph_a3, add_ph_b3 = 151, 358
+    add_ph_a4, add_ph_b4 = 340, 358
     bf_text = xy_end(add_ph_a1, add_ph_b1, add_ph_a2, add_ph_b2, add_ph_a3, add_ph_b3, add_ph_a4, add_ph_b4)
     with open(filename, 'a+', encoding = 'utf-8') as f :
         f.write(bf_text + '地址、电话：' + '\n')
@@ -205,17 +205,17 @@ def purchase() :
     acc = random.choice(acc)
     bank_len, acc_len = len(bank), len(acc)
     bank_account = bank + ' ' + acc
-    draw.text((373, 372), bank_account, fill = (70, 93, 223), font = gl.ft6)
-    bank_x1, bank_y1 = 373, 372
-    bank_x2, bank_y2 = 373 + bank_len * 26 + 14 * acc_len, 372
-    bank_x3, bank_y3 = 373, 372 + 26
-    bank_x4, bank_y4 = 373 + bank_len * 26 + 14 * acc_len, 372 + 26
+    draw.text((350, 372), bank_account, fill = (70, 93, 223), font = gl.ft6)
+    bank_x1, bank_y1 = 350, 372
+    bank_x2, bank_y2 = 350 + bank_len * 26 + 14 * acc_len, 372
+    bank_x3, bank_y3 = 350, 372 + 30
+    bank_x4, bank_y4 = 350 + bank_len * 26 + 14 * acc_len, 372 + 30
     text = xy_end(bank_x1, bank_y1, bank_x2, bank_y2, bank_x3, bank_y3, bank_x4, bank_y4)
 
-    bank_a1, bank_b1 = 153, 373
-    bank_a2, bank_b2 = 336, 373
-    bank_a3, bank_b3 = 153, 399
-    bank_a4, bank_b4 = 336, 399
+    bank_a1, bank_b1 = 153, 369
+    bank_a2, bank_b2 = 339, 369
+    bank_a3, bank_b3 = 153, 406
+    bank_a4, bank_b4 = 339, 406
     bf_text = xy_end(bank_a1, bank_b1, bank_a2, bank_b2, bank_a3, bank_b3, bank_a4, bank_b4)
     with open(filename, 'a+', encoding = 'utf-8') as f :
         f.write(bf_text + '开户行及账号：' + '\n')
@@ -238,35 +238,35 @@ def password() :
     draw.text((1093, 293), pwd2, fill = (70, 93, 223), font = gl.ft9)
     draw.text((1093, 326), pwd3, fill = (70, 93, 223), font = gl.ft9)
     draw.text((1093, 359), pwd4, fill = (70, 93, 223), font = gl.ft9)
-    # # 第一行密码的坐标
-    # pwd1_x1, pwd1_y1 = 1093, 260
-    # pwd1_x2, pwd1_y2 = 1659, 260
-    # pwd1_x3, pwd1_y3 = 1093, 291
-    # pwd1_x4, pwd1_y4 = 1659, 291
-    # pwd1_text = xy_end(pwd1_x1, pwd1_y1, pwd1_x2, pwd1_y2, pwd1_x3, pwd1_y3, pwd1_x4, pwd1_y4)
-    # # 第二行密码的坐标
-    # pwd2_x1, pwd2_y1 = 1093, 293
-    # pwd2_x2, pwd2_y2 = 1659, 293
-    # pwd2_x3, pwd2_y3 = 1093, 324
-    # pwd2_x4, pwd2_y4 = 1659, 324
-    # pwd2_text = xy_end(pwd2_x1, pwd2_y1, pwd2_x2, pwd2_y2, pwd2_x3, pwd2_y3, pwd2_x4, pwd2_y4)
-    # # 第三行密码的坐标
-    # pwd3_x1, pwd3_y1 = 1093, 326
-    # pwd3_x2, pwd3_y2 = 1659, 326
-    # pwd3_x3, pwd3_y3 = 1093, 357
-    # pwd3_x4, pwd3_y4 = 1659, 357
-    # pwd3_text = xy_end(pwd3_x1, pwd3_y1, pwd3_x2, pwd3_y2, pwd3_x3, pwd3_y3, pwd3_x4, pwd3_y4)
-    # # 第四行密码的坐标
-    # pwd4_x1, pwd4_y1 = 1093, 359
-    # pwd4_x2, pwd4_y2 = 1659, 359
-    # pwd4_x3, pwd4_y3 = 1093, 390
-    # pwd4_x4, pwd4_y4 = 1659, 390
-    # pwd4_text = xy_end(pwd4_x1, pwd4_y1, pwd4_x2, pwd4_y2, pwd4_x3, pwd4_y3, pwd4_x4, pwd4_y4)
-    # with open(filename, 'a+', encoding = 'utf-8') as f :
-    #     f.write(pwd1_text + pwd1 + '\n')
-    #     f.write(pwd2_text + pwd2 + '\n')
-    #     f.write(pwd3_text + pwd3 + '\n')
-    #     f.write(pwd4_text + pwd4 + '\n')
+    # 第一行密码的坐标
+    pwd1_x1, pwd1_y1 = 1093, 260
+    pwd1_x2, pwd1_y2 = 1659, 260
+    pwd1_x3, pwd1_y3 = 1093, 291
+    pwd1_x4, pwd1_y4 = 1659, 291
+    pwd1_text = xy_end(pwd1_x1, pwd1_y1, pwd1_x2, pwd1_y2, pwd1_x3, pwd1_y3, pwd1_x4, pwd1_y4)
+    # 第二行密码的坐标
+    pwd2_x1, pwd2_y1 = 1093, 293
+    pwd2_x2, pwd2_y2 = 1659, 293
+    pwd2_x3, pwd2_y3 = 1093, 324
+    pwd2_x4, pwd2_y4 = 1659, 324
+    pwd2_text = xy_end(pwd2_x1, pwd2_y1, pwd2_x2, pwd2_y2, pwd2_x3, pwd2_y3, pwd2_x4, pwd2_y4)
+    # 第三行密码的坐标
+    pwd3_x1, pwd3_y1 = 1093, 326
+    pwd3_x2, pwd3_y2 = 1659, 326
+    pwd3_x3, pwd3_y3 = 1093, 357
+    pwd3_x4, pwd3_y4 = 1659, 357
+    pwd3_text = xy_end(pwd3_x1, pwd3_y1, pwd3_x2, pwd3_y2, pwd3_x3, pwd3_y3, pwd3_x4, pwd3_y4)
+    # 第四行密码的坐标
+    pwd4_x1, pwd4_y1 = 1093, 359
+    pwd4_x2, pwd4_y2 = 1659, 359
+    pwd4_x3, pwd4_y3 = 1093, 390
+    pwd4_x4, pwd4_y4 = 1659, 390
+    pwd4_text = xy_end(pwd4_x1, pwd4_y1, pwd4_x2, pwd4_y2, pwd4_x3, pwd4_y3, pwd4_x4, pwd4_y4)
+    with open(filename, 'a+', encoding = 'utf-8') as f :
+        f.write(pwd1_text + pwd1 + '\n')
+        f.write(pwd2_text + pwd2 + '\n')
+        f.write(pwd3_text + pwd3 + '\n')
+        f.write(pwd4_text + pwd4 + '\n')
 
 
 # 添加货物或应税劳务及后面对应的规格价格等内容
@@ -286,54 +286,54 @@ def add_goods() :
     total2 = 0  # 各个税额之和
     total = 0
 
-    goods_a1, goods_b1 = 126, 421
-    goods_a2, goods_b2 = 460, 421
-    goods_a3, goods_b3 = 126, 447
-    goods_a4, goods_b4 = 460, 447
+    goods_a1, goods_b1 = 126, 415
+    goods_a2, goods_b2 = 463, 415
+    goods_a3, goods_b3 = 126, 450
+    goods_a4, goods_b4 = 463, 450
     bf_goods_text = xy_end(goods_a1, goods_b1, goods_a2, goods_b2, goods_a3, goods_b3, goods_a4, goods_b4)
 
-    standards_a1, standards_b1 = 547, 423
-    standards_a2, standards_b2 = 670, 423
-    standards_a3, standards_b3 = 547, 449
-    standards_a4, standards_b4 = 670, 449
+    standards_a1, standards_b1 = 543, 415
+    standards_a2, standards_b2 = 670, 415
+    standards_a3, standards_b3 = 543, 453
+    standards_a4, standards_b4 = 670, 453
     bf_standards_text = xy_end(standards_a1, standards_b1, standards_a2, standards_b2, standards_a3, standards_b3,
                                standards_a4, standards_b4)
-    units_a1, units_b1 = 741, 423
-    units_a2, units_b2 = 792, 423
-    units_a3, units_b3 = 741, 451
-    units_a4, units_b4 = 792, 451
+    units_a1, units_b1 = 738, 415
+    units_a2, units_b2 = 799, 415
+    units_a3, units_b3 = 738, 451
+    units_a4, units_b4 = 799, 451
     bf_units_text = xy_end(units_a1, units_b1, units_a2, units_b2, units_a3, units_b3, units_a4, units_b4)
 
-    amount_a1, amount_b1 = 861, 423
-    amount_a2, amount_b2 = 940, 423
-    amount_a3, amount_b3 = 861, 451
+    amount_a1, amount_b1 = 859, 415
+    amount_a2, amount_b2 = 940, 415
+    amount_a3, amount_b3 = 859, 451
     amount_a4, amount_b4 = 940, 451
     bf_amount_text = xy_end(amount_a1, amount_b1, amount_a2, amount_b2, amount_a3, amount_b3, amount_a4, amount_b4)
 
-    unit_price_a1, unit_price_b1 = 1030, 426
-    unit_price_a2, unit_price_b2 = 1105, 426
-    unit_price_a3, unit_price_b3 = 1030, 453
-    unit_price_a4, unit_price_b4 = 1105, 453
+    unit_price_a1, unit_price_b1 = 1029, 417
+    unit_price_a2, unit_price_b2 = 1111, 417
+    unit_price_a3, unit_price_b3 = 1029, 453
+    unit_price_a4, unit_price_b4 = 1111, 453
     bf_unit_price_text = xy_end(unit_price_a1, unit_price_b1, unit_price_a2, unit_price_b2, unit_price_a3,
                                 unit_price_b3, unit_price_a4, unit_price_b4)
 
-    total_price_a1, total_price_b1 = 1218, 425
-    total_price_a2, total_price_b2 = 1325, 425
-    total_price_a3, total_price_b3 = 1218, 452
-    total_price_a4, total_price_b4 = 1325, 452
+    total_price_a1, total_price_b1 = 1216, 415
+    total_price_a2, total_price_b2 = 1329, 415
+    total_price_a3, total_price_b3 = 1216, 452
+    total_price_a4, total_price_b4 = 1329, 452
     bf_total_price_text = xy_end(total_price_a1, total_price_b1, total_price_a2, total_price_b2, total_price_a3,
                                  total_price_b3, total_price_a4, total_price_b4)
 
-    rate_a1, rate_b1 = 1408, 427
-    rate_a2, rate_b2 = 1468, 427
+    rate_a1, rate_b1 = 1407, 418
+    rate_a2, rate_b2 = 1474, 418
     rate_a3, rate_b3 = 1408, 454
-    rate_a4, rate_b4 = 1468, 454
+    rate_a4, rate_b4 = 1474, 454
     bf_rate_text = xy_end(rate_a1, rate_b1, rate_a2, rate_b2, rate_a3, rate_b3, rate_a4, rate_b4)
 
-    tax_a1, tax_b1 = 1546, 423
-    tax_a2, tax_b2 = 1656, 423
-    tax_a3, tax_b3 = 1546, 449
-    tax_a4, tax_b4 = 1656, 449
+    tax_a1, tax_b1 = 1545, 418
+    tax_a2, tax_b2 = 1660, 418
+    tax_a3, tax_b3 = 1545, 456
+    tax_a4, tax_b4 = 1660, 456
     bf_tax_text = xy_end(tax_a1, tax_b1, tax_a2, tax_b2, tax_a3, tax_b3, tax_a4, tax_b4)
     with open(filename, 'a+', encoding = 'utf-8') as f :  # 写入坐标信息
         f.write(bf_goods_text + '货物或应税劳务、服务名称' + '\n')
@@ -345,7 +345,7 @@ def add_goods() :
         f.write(bf_rate_text + '税率' + '\n')
         f.write(bf_tax_text + '税额' + '\n')
 
-    for i in range(4) :
+    for i in range(random.randint(1, 4)) :
         y = 461 + (35 * i)
         goods = fake.sentence()
         standards = ''
@@ -461,10 +461,10 @@ def add_goods() :
     draw.text((1430, 799), ("%.2f" % total), fill = (70, 93, 223), font = gl.ft10)  # 添加金额税额之和
     draw.text((598, 798), big_total, fill = (70, 93, 223), font = gl.ft11)  # 添加金额税额之和的中文大写
 
-    total_a1, total_b1 = 199, 739
-    total_a2, total_b2 = 384, 739
-    total_a3, total_b3 = 199, 769
-    total_a4, total_b4 = 384, 769
+    total_a1, total_b1 = 193, 739
+    total_a2, total_b2 = 393, 739
+    total_a3, total_b3 = 193, 772
+    total_a4, total_b4 = 393, 772
     bf_total_text = xy_end(total_a1, total_b1, total_a2, total_b2, total_a3, total_b3, total_a4, total_b4)
     # 金额之和坐标
     total1_x1, total1_y1 = 1179, 741
@@ -487,10 +487,10 @@ def add_goods() :
     total_x4, total_y4 = 1430 + 19 * len("%.2f" % total), 826
     total_text = xy_end(total_x1, total_y1, total_x2, total_y2, total_x3, total_y3, total_x4, total_y4)
 
-    small_total_a1, small_total_b1 = 1266, 805
-    small_total_a2, small_total_b2 = 1365, 805
+    small_total_a1, small_total_b1 = 1266, 793
+    small_total_a2, small_total_b2 = 1371, 793
     small_total_a3, small_total_b3 = 1266, 834
-    small_total_a4, small_total_b4 = 1365, 834
+    small_total_a4, small_total_b4 = 1371, 834
     bf_small_total = xy_end(small_total_a1, small_total_b1, small_total_a2, small_total_b2, small_total_a3,
                             small_total_b3, small_total_a4, small_total_b4)
 
@@ -501,10 +501,10 @@ def add_goods() :
     big_x4, big_y4 = 598 + 26 * len(big_total), 828
     big_text = xy_end(big_x1, big_y1, big_x2, big_y2, big_x3, big_y3, big_x4, big_y4)
 
-    big_a1, big_b1 = 171, 798
-    big_a2, big_b2 = 409, 798
-    big_a3, big_b3 = 171, 829
-    big_a4, big_b4 = 409, 829
+    big_a1, big_b1 = 168, 795
+    big_a2, big_b2 = 411, 795
+    big_a3, big_b3 = 168, 831
+    big_a4, big_b4 = 411, 831
     bf_big_text = xy_end(big_a1, big_b1, big_a2, big_b2, big_a3, big_b3, big_a4, big_b4)
     # 写入坐标
     with open(filename, 'a+', encoding = 'utf-8') as f :
@@ -528,17 +528,17 @@ def add_seller() :  # 添加销售方名称
     宽为27高为30
     """
     seller_name = fake.company()
-    draw.text((373, 860), seller_name, fill = (70, 93, 223), font = gl.ft6)
-    x1, y1 = 373, 860
-    x2, y2 = 373 + 27 * len(seller_name), 860
-    x3, y3 = 373, 860 + 30
-    x4, y4 = 373 + 27 * len(seller_name), 860 + 30
+    draw.text((353, 860), seller_name, fill = (70, 93, 223), font = gl.ft6)
+    x1, y1 = 353, 860
+    x2, y2 = 353 + 27 * len(seller_name), 860
+    x3, y3 = 353, 860 + 30
+    x4, y4 = 353 + 27 * len(seller_name), 860 + 30
     text = xy_end(x1, y1, x2, y2, x3, y3, x4, y4)
 
-    a1, b1 = 153, 859
-    a2, b2 = 333, 859
-    a3, b3 = 153, 888
-    a4, b4 = 333, 888
+    a1, b1 = 150, 856
+    a2, b2 = 339, 856
+    a3, b3 = 150, 891
+    a4, b4 = 339, 891
     bf_text = xy_end(a1, b1, a2, b2, a3, b3, a4, b4)
     with open(filename, 'a+', encoding = 'utf-8') as f :
         f.write(bf_text + '名称：' + '\n')
@@ -555,17 +555,17 @@ def seller_nums() :  # 添加纳税人识别号（销售方）
     id1 = ''.join(str(random.choice(id_part)) for _ in range(18))
     id2 = ''.join(str(random.choice(id_part)) for _ in range(15))
     seller_num = random.choice([id1, id2])
-    draw.text((406, 898), seller_num, fill = (70, 93, 223), font = gl.ft7)
-    x1, y1 = 406, 898
-    x2, y2 = 406 + 20 * len(seller_num), 898
-    x3, y3 = 406, 928
-    x4, y4 = 406 + 20 * len(seller_num), 928
+    draw.text((386, 898), seller_num, fill = (70, 93, 223), font = gl.ft7)
+    x1, y1 = 386, 898
+    x2, y2 = 386 + 20 * len(seller_num), 898
+    x3, y3 = 386, 928
+    x4, y4 = 386 + 20 * len(seller_num), 928
     text = xy_end(x1, y1, x2, y2, x3, y3, x4, y4)
 
-    a1, b1 = 153, 897
-    a2, b2 = 333, 897
-    a3, b3 = 153, 924
-    a4, b4 = 333, 924
+    a1, b1 = 147, 894
+    a2, b2 = 337, 894
+    a3, b3 = 147, 928
+    a4, b4 = 337, 928
     bf_text = xy_end(a1, b1, a2, b2, a3, b3, a4, b4)
     with open(filename, 'a+', encoding = 'utf-8') as f :
         f.write(bf_text + '纳税人识别号：' + '\n')
@@ -583,17 +583,17 @@ def add_and_phone() :  # 添加地址、电话（销售方）
     address = fake.address()[0 : -7]
     add_len = len(address)
     address_phone = address + ' ' + phone1 + '-' + phone2
-    draw.text((373, 940), address_phone, fill = (70, 93, 223), font = gl.ft6)
-    x1, y1 = 373, 940
-    x2, y2 = 373 + 27 * (add_len + 1) + 14 * 7, 940
-    x3, y3 = 373, 970
-    x4, y4 = 373 + 27 * (add_len + 1) + 14 * 7, 970
+    draw.text((353, 940), address_phone, fill = (70, 93, 223), font = gl.ft8)
+    x1, y1 = 353, 940
+    x2, y2 = 353 + 21 * (add_len + 1) + 12 * 10, 940
+    x3, y3 = 353, 970
+    x4, y4 = 353 + 21 * (add_len + 1) + 12 * 10, 970
     text = xy_end(x1, y1, x2, y2, x3, y3, x4, y4)
 
-    a1, b1 = 153, 936
-    a2, b2 = 333, 936
-    a3, b3 = 153, 963
-    a4, b4 = 333, 963
+    a1, b1 = 147, 933
+    a2, b2 = 339, 933
+    a3, b3 = 147, 966
+    a4, b4 = 339, 966
     bf_text = xy_end(a1, b1, a2, b2, a3, b3, a4, b4)
     with open(filename, 'a+', encoding = 'utf-8') as f :
         f.write(bf_text + '地址、电话：' + '\n')
@@ -616,17 +616,17 @@ def add_bankId() :  # 添加开户行及账号
     account = random.choice(acc)
     acc_len = len(account)
     bank_and_account = bank + ' ' + account
-    draw.text((373, 978), bank_and_account, fill = (70, 93, 223), font = gl.ft6)
-    x1, y1 = 373, 978
-    x2, y2 = 373 + 27 * (bank_len + 1) + 14 * acc_len, 978
-    x3, y3 = 373, 1008
-    x4, y4 = 373 + 27 * (bank_len + 1) + 14 * acc_len, 1008
+    draw.text((353, 978), bank_and_account, fill = (70, 93, 223), font = gl.ft6)
+    x1, y1 = 353, 978
+    x2, y2 = 353 + 27 * (bank_len + 1) + 14 * acc_len, 978
+    x3, y3 = 353, 1008
+    x4, y4 = 353 + 27 * (bank_len + 1) + 14 * acc_len, 1008
     text = xy_end(x1, y1, x2, y2, x3, y3, x4, y4)
 
-    a1, b1 = 153, 973
-    a2, b2 = 333, 973
-    a3, b3 = 153, 1000
-    a4, b4 = 333, 1000
+    a1, b1 = 147, 973
+    a2, b2 = 337, 973
+    a3, b3 = 147, 1008
+    a4, b4 = 337, 1008
     bf_text = xy_end(a1, b1, a2, b2, a3, b3, a4, b4)
     with open(filename, 'a+', encoding = 'utf-8') as f :
         f.write(bf_text + '开户行及账号：' + '\n')
@@ -652,10 +652,10 @@ def add_name() :
     n1_x4, n1_y4 = 246 + 27 * len(name1), 1056
     n1_text = xy_end(n1_x1, n1_y1, n1_x2, n1_y2, n1_x3, n1_y3, n1_x4, n1_y4)
 
-    n1_a1, n1_b1 = 103, 1023
-    n1_a2, n1_b2 = 220, 1023
-    n1_a3, n1_b3 = 103, 1053
-    n1_a4, n1_b4 = 220, 1053
+    n1_a1, n1_b1 = 105, 1021
+    n1_a2, n1_b2 = 229, 1021
+    n1_a3, n1_b3 = 105, 1053
+    n1_a4, n1_b4 = 229, 1053
     bf_n1 = xy_end(n1_a1, n1_b1, n1_a2, n1_b2, n1_a3, n1_b3, n1_a4, n1_b4)
 
     n2_x1, n2_y1 = 670, 1026
@@ -676,10 +676,10 @@ def add_name() :
     n3_x4, n3_y4 = 1060 + 27 * len(name2), 1056
     n3_text = xy_end(n3_x1, n3_y1, n3_x2, n3_y2, n3_x3, n3_y3, n3_x4, n3_y4)
 
-    n3_a1, n3_b1 = 924, 1023
-    n3_a2, n3_b2 = 1033, 1023
-    n3_a3, n3_b3 = 924, 1053
-    n3_a4, n3_b4 = 1033, 1053
+    n3_a1, n3_b1 = 921, 1021
+    n3_a2, n3_b2 = 1035, 1021
+    n3_a3, n3_b3 = 921, 1059
+    n3_a4, n3_b4 = 1035, 1059
     bf_n3 = xy_end(n3_a1, n3_b1, n3_a2, n3_b2, n3_a3, n3_b3, n3_a4, n3_b4)
     with open(filename, 'a+', encoding = 'utf-8') as f :
         f.write(bf_n1 + '收款人：' + '\n')
@@ -723,19 +723,19 @@ def add_fapiao_daima() :
 def add_fapiao_hao() :
     no_str = ''.join(str(random.choice(range(10))) for _ in range(8))  # 随机生成8位数字发票号码
     no_str1 = 'No ' + no_str
-    draw.text((1326, 82), no_str, fill = (70, 93, 223), font = gl.ft2)  # 添加发票号码
-    draw.text((1563, 138), no_str, fill = (70, 93, 223), font = gl.ft4)  # 添加小号码
+    draw.text((1326, 72), no_str, fill = (70, 93, 223), font = gl.ft2)  # 添加发票号码
+    draw.text((1563, 125), no_str, fill = (70, 93, 223), font = gl.ft4)  # 添加小号码
     # 大的号码坐标
-    x1, y1 = 1326, 82
-    x2, y2 = 1551, 82
-    x3, y3 = 1326, 129
-    x4, y4 = 1551, 129
+    x1, y1 = 1326, 72
+    x2, y2 = 1554, 72
+    x3, y3 = 1326, 125
+    x4, y4 = 1554, 125
     x_text = xy_end(x1, y1, x2, y2, x3, y3, x4, y4)
     # 小的号码坐标
-    sx1, sy1 = 1563, 138
-    sx2, sy2 = 1685, 138
-    sx3, sy3 = 1563, 166
-    sx4, sy4 = 1685, 166
+    sx1, sy1 = 1560, 100
+    sx2, sy2 = 1695, 100
+    sx3, sy3 = 1560, 125
+    sx4, sy4 = 1695, 125
     sx_text = xy_end(sx1, sy1, sx2, sy2, sx3, sy3, sx4, sy4)
     with open(filename, 'a+', encoding = 'utf-8') as f :
         f.write(x_text + no_str1 + '\n')
@@ -779,10 +779,10 @@ def add(time_str) :
 def before_add() :
     name = "河南增值税专用发票"
 
-    a1, b1 = 660, 42
-    a2, b2 = 1130, 42
-    a3, b3 = 660, 92
-    a4, b4 = 1130, 92
+    a1, b1 = 657, 37
+    a2, b2 = 1135, 37
+    a3, b3 = 657, 92
+    a4, b4 = 1135, 92
     fapiao = xy_end(a1, b1, a2, b2, a3, b3, a4, b4)
     with open(filename, 'a+', encoding = 'utf-8') as f :
         f.write(fapiao + name + '\n')
@@ -802,7 +802,8 @@ def main() :
         global kv_filename
         global rotate_angle
         global cx, cy
-        template_num = random.randint(1, 3)
+        f = [1, 3]
+        template_num = random.choice(f)
         im = Image.open('template1\\tmp1_pic_template\\pic' + str(template_num) + '.jpg')  # 随机挑选一个模板图
         draw = ImageDraw.Draw(im)
         rotate_angle = 0
